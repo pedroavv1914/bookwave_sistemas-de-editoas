@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projetoapp1914.paginas.EditarAutor"
+             Title="{Binding Nome}">
+
+    <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#7EA1C4">
+
+        <HorizontalStackLayout Spacing="20" Padding="10">
+            <Button 
+                    Text="◀ VOLTAR" 
+                    Clicked="btnvoltarAutores"
+                    BackgroundColor="#042159"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+
+            <Button
+                    Text="EDITAR UM AUTOR"
+                    BackgroundColor="#117DBF"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+        </HorizontalStackLayout>
+
+        <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+            <Entry 
+                    x:Name="autorEntry"
+                    Text="{Binding Nome}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+        </Border>
+
+        <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+            <Entry 
+                    x:Name="pseudEntry"
+                    Text="{Binding Pseudonimo}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+        </Border>
+
+        <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+            <Entry 
+                    x:Name="obsvEntry"
+                    Text="{Binding Observacoes}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+        </Border>
+
+        <Button Text="Salvar" Clicked="Salvar_Clicked" BackgroundColor="#042159" TextColor="White" CornerRadius="20"/>
+
+    </VerticalStackLayout>
+</ContentPage>

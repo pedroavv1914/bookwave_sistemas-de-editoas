@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projetoapp1914.paginas.paginaInicial"
+             Title="paginaInicial">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25" BackgroundColor="#7EA1C4">
+
+            <Image Source="logo.png" 
+               WidthRequest="390"
+               HeightRequest="120"
+               HorizontalOptions="Center"/>
+
+            <Label Text="Este sistema permite que o usuário cadastre, busque e gerencie livros de forma prática e eficiente. Com funcionalidades de inserção de dados como título, autor e código, é possível manter um controle completo sobre os livros cadastrados, facilitando a busca e o gerenciamento das informações."
+               FontSize="14"
+               FontAttributes="Italic, Bold"
+               FontFamily="poppins"
+               TextColor="Black"
+               HorizontalTextAlignment="Center"/>
+
+            <Image Source="livro.png"
+               HeightRequest="122"
+               WidthRequest="274"
+               HorizontalOptions="Center"
+               Aspect="AspectFit"/>
+
+            <Border StrokeThickness="0" Padding="0" BackgroundColor="Transparent">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                Opacity="0.7"
+                Radius="8"/>
+                </Border.Shadow>
+
+                <Button Text="CADASTRAR LIVROS"
+                Clicked="OnCadastroButtonClicked"
+                FontSize="19"
+                CornerRadius="25"
+                FontFamily="poppins"
+                FontAttributes="Bold"
+                BackgroundColor="#BFBFBF"
+                TextColor="Black"/>
+            </Border>
+
+            <Border StrokeThickness="0" Padding="0" BackgroundColor="Transparent">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                Opacity="0.7"
+                Radius="8"/>
+                </Border.Shadow>
+
+                <Button Text="CADASTRAR EDITORAS"
+                Clicked="OnListaButtonClicked"
+                FontSize="19"
+                CornerRadius="25"
+                FontFamily="Poppins"
+                FontAttributes="Bold"
+                BackgroundColor="#BFBFBF"
+                TextColor="Black"/>
+            </Border>
+
+            <Border StrokeThickness="0" Padding="0" BackgroundColor="Transparent">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                Opacity="0.7"
+                Radius="8"/>
+                </Border.Shadow>
+
+                <Button Text="CADASTRAR AUTORES"
+                Clicked="btnbuscarlivro"
+                FontSize="19"
+                CornerRadius="25"
+                FontFamily="Poppins"
+                FontAttributes="Bold"
+                BackgroundColor="#BFBFBF"
+                TextColor="Black"/>
+            </Border>
+
+            <Border StrokeThickness="0" Padding="0" BackgroundColor="Transparent">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                Opacity="0.7"
+                Radius="8"/>
+                </Border.Shadow>
+
+                <Button Text="CADASTRAR USUÁRIOS"
+                Clicked="btncadastrarUsuarios"
+                FontSize="19"
+                CornerRadius="25"
+                FontFamily="Poppins"
+                FontAttributes="Bold"
+                BackgroundColor="#BFBFBF"
+                TextColor="Black"/>
+            </Border>
+
+            <Border StrokeThickness="0" Padding="0" BackgroundColor="Transparent">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                Opacity="0.7"
+                Radius="8"/>
+                </Border.Shadow>
+
+                <Button Text="SOBRE"
+                Clicked="btnSobre"
+                FontSize="19"
+                CornerRadius="25"
+                FontFamily="Poppins"
+                FontAttributes="Bold"
+                BackgroundColor="#BFBFBF"
+                TextColor="Black"/>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

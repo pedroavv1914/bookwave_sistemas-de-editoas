@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:projetoapp1914.Converters"
+             x:Class="projetoapp1914.paginas.cadastroUsuario"
+             Title="cadastroUsuario">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:PasswordMaskConverter x:Key="PasswordMask" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#7EA1C4">
+
+            <HorizontalStackLayout Spacing="20" Padding="10">
+                <Button 
+                    Text="◀ VOLTAR" 
+                    Clicked="btnvoltarUsuarios"
+                    BackgroundColor="#042159"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+
+                <Button
+                    Text="CADASTRAR UM USUÁRIO"
+                    BackgroundColor="#117DBF"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Cadastro de Usuários" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Border StrokeThickness="0" BackgroundColor="#0A3A40" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    Placeholder="CÓDIGO (Auto Incremento)"
+                    BackgroundColor="#0A3A40"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"
+                    IsEnabled="False"
+                    IsReadOnly="True"
+                    CursorPosition="0"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    x:Name="nomeEntry"
+                    Placeholder="DIGITE SEU NOME"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    x:Name="senhaEntry"
+                    Placeholder="DIGITE SUA SENHA"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Button Text="Salvar" Clicked="Salvar_Clicked" BackgroundColor="#042159" TextColor="White" CornerRadius="20"/>
+
+            <Label Text="Buscar Usuário" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <SearchBar 
+                    x:Name="buscaUsuariosEntry"
+                    Placeholder="DIGITE O NOME PARA PESQUISAR"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    TextChanged="buscaUsuariosEntry_TextChanged"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Label Text="Resultados:" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Border BackgroundColor="LightGray" StrokeShape="RoundRectangle 30" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <ListView x:Name="lstUsuarios" ItemSelected="lstUsuario_ItemSelected" SeparatorColor="Gray" SeparatorVisibility="Default" BackgroundColor="Transparent" 
+              HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+              HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                                </ViewCell.ContextActions>
+                                <Grid ColumnDefinitions="*, *, *" Padding="15">
+                                    <Label Grid.Column="0" Text="{Binding Codigo}" TextColor="Black" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding Nome}" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                    <Label Grid.Column="2" Text="{Binding Senha, Converter={StaticResource PasswordMask}}" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

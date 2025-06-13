@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projetoapp1914.paginas.sobre"
+             Title="sobre">
+
+
+    <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="#7EA1C4">
+
+        <HorizontalStackLayout Spacing="20" Padding="10">
+            <Button 
+                    Text="◀ VOLTAR" 
+                    Clicked="btnvoltarSobre"
+                    BackgroundColor="#042159"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+
+            <Button
+                    Text="SOBRE"
+                    BackgroundColor="#117DBF"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+        </HorizontalStackLayout>
+
+        <Image Source="logo.png" 
+               WidthRequest="390"
+               HeightRequest="120"
+               HorizontalOptions="Center"/>
+
+        <Label
+            Text="BOOKWAVE: Sistema de Editoras"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="Desenvolvedor: Pedro Oliveira Ribeiro dos Santos"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="RA: 2401723"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="DATA: 02/04/2025"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <Button 
+                FontFamily="poppins"
+                Text="HOME"
+                BackgroundColor="#042159"
+                TextColor="White"
+                FontAttributes="Bold"
+                Padding="15,10"
+                CornerRadius="30"
+                HeightRequest="56"
+                WidthRequest="130"
+                HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

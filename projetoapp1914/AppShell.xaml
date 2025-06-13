@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="projetoapp1914.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:projetoapp1914"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="True"
+    Title="projetoapp1914"
+    FlyoutBackground="#7EA1C4"
+    Shell.TabBarBackgroundColor="#7EA1C4">
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Spacing="10" Padding="10">
+            <Image Source="logo.png"
+                   HorizontalOptions="Center"/>
+            <Label Text="O melhor sistema de editoras do Brasil"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout Padding="15">
+            <Label
+                Text="FALE CONOSCO: +55 (11)9999-9999"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"/>
+
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Title="MENU"
+        FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent
+        Title="Pagina Inicial" Icon="home.png"
+        ContentTemplate="{DataTemplate local:paginas.paginaInicial}"
+        Route="Pagina Inicial" />
+
+        <ShellContent
+        Title="Cadastrar Livros" Icon="book.png"
+        ContentTemplate="{DataTemplate local:paginas.cadastroLivro}"
+        Route="buscarlivro1" />
+
+        <ShellContent
+        Title="Cadastrar Editoras" Icon="editora.png"
+        ContentTemplate="{DataTemplate local:paginas.cadastroEditora}"
+        Route="Lista de Livros" />
+
+        <ShellContent
+        Title="Cadastrar Autores" Icon="add.png"
+        ContentTemplate="{DataTemplate local:paginas.cadastroAutor}"
+        Route="teladecadastro" />
+
+        <ShellContent
+        Title="Cadastrar Usuários" Icon="user.png"
+        ContentTemplate="{DataTemplate local:paginas.cadastroUsuario}"
+        Route="cadastroUsuario" />
+
+        <ShellContent
+        Title="Sobre" Icon="sobre.png"
+        ContentTemplate="{DataTemplate local:paginas.sobre}"
+        Route="Sobre" />
+
+    </FlyoutItem>
+
+</Shell>

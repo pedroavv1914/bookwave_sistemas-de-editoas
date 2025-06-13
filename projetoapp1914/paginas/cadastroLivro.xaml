@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="projetoapp1914.paginas.cadastroLivro"
+             Title="Gerenciar Livros">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#7EA1C4">
+
+            <HorizontalStackLayout Spacing="20" Padding="10">
+                <Button 
+                    Text="◀ VOLTAR" 
+                    Clicked="btnvoltarlivro_Clicked"
+                    BackgroundColor="#042159"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+
+                <Button
+                    Text="CADASTRAR UM LIVRO"
+                    BackgroundColor="#117DBF"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="30"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Cadastro de Livros" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    x:Name="livroEntry"
+                    Placeholder="TÍTULO DO LIVRO"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    x:Name="anoPublicacaoEntry"
+                    Placeholder="ANO DE PUBLICAÇÃO"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    x:Name="sbnEntry"
+                    Placeholder="DIGITE O SBN DO LIVRO:"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Entry 
+                    x:Name="obsvLivroEntry"
+                    Placeholder="OBSERVAÇÕES"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Picker 
+                    x:Name="picAutores" 
+                    Title="AUTOR"
+                    TitleColor="Gray"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <Picker 
+                    x:Name="picEditoras" 
+                    Title="EDITORA"
+                    TitleColor="Gray"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Button Text="Salvar" Clicked="Salvar_Clicked" BackgroundColor="#042159" TextColor="White" CornerRadius="20"/>
+
+            <Label Text="Buscar" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <Border StrokeThickness="0" BackgroundColor="LightGray" Padding="5" 
+             StrokeShape="RoundRectangle 30">
+
+                <SearchBar 
+                    Placeholder="DIGITE O TÍTULO PARA PESQUISAR"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    TextChanged="buscaEntry_TextChanged"
+                    PlaceholderColor="Gray"
+                    FontAttributes="Bold"
+                    WidthRequest="300"
+                    Visual="Default"/>
+
+            </Border>
+
+            <Label Text="Resultados:" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Border BackgroundColor="LightGray" StrokeShape="RoundRectangle 30" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <ListView x:Name="lstLivro" ItemSelected="lstLivro_ItemSelected" SeparatorColor="Gray" SeparatorVisibility="Default" BackgroundColor="Transparent" 
+              HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+              HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                                </ViewCell.ContextActions>
+                                <Grid ColumnDefinitions="*, *, *, *" Padding="15">
+                                    <Label Grid.Column="0" Text="{Binding Nome}" TextColor="Black" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding AnoPublicacao}" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                    <Label Grid.Column="2" Text="{Binding NomeAutor}" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                    <Label Grid.Column="3" Text="{Binding NomeEditora}" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
