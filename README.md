@@ -1,4 +1,4 @@
-# 🚀 projetoapp1914
+# 🚀 BOOKWAVE - publishing system
 
 💻 A .NET application with a clean architecture and modern design patterns.
 
